@@ -60,7 +60,9 @@ plot_ly(cohort_summary,
 
 **Assumptions**
 
-It was assumed that people were honest and reasonable in their responses, and responses where responders did not consent to take part in the survey were excluded. Students responded with the accurate amount of rent they paid in AUD$ per week, and also an appropriate approximation of the time it takes to commute to campus in minutes. “$0” entries were assumed to be students who lived with parents/family, and were excluded from the data as they do not contribute to data about rent prices. Commute time was capped to 180 minutes (3 hours), as 3 hours is a generous upper limit for reasonable commutes.  
+It was assumed that people were honest and reasonable in their responses, and responses where students did not consent to take part in the survey were excluded. Students responded with the accurate amount of rent they paid in AUD$ per week, and also a reasonable estimate of the time it takes to commute to campus in minutes.
+
+"$0" rent values were assumed to reflect students living with parents or family and were excluded, as they do not provide useful data about actual rent prices. Entries with rent values above "$2000" were also removed, as they could represent shared leases, data entry errors or luxury rentals not representative of student populations. Similarly, commute times were capped at 180 minutes (3 hours), a generous upper limit for reasonable commutes. 
 
 
 
