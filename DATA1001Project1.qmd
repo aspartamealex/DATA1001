@@ -1,6 +1,6 @@
 ---
 title: "DATA1001 Project"
-author: "540539824, 550668899, 440318530, 541006846"
+author: "540539824, 550668899, 440318530, 541006846, 530657501",  
 format: 
   html:
     embed-resources: true
@@ -60,14 +60,14 @@ plot_ly(cohort_summary,
 
 **Assumptions**
 
-We assumed that people were honest and reasonable in their responses, everyone responded with the accurate amount of rent they paid in AUD$ per week and also an appropriate approximation of the length of their commute to campus. We cleaned the data by removing responses that answered $0 and those above $2000, as well as responses with commute times over 180 minutes. 
+It was assumed that people were honest and reasonable in their responses, and responses where responders did not consent to take part in the survey were excluded. Students responded with the accurate amount of rent they paid in AUD$ per week, and also an appropriate approximation of the time it takes to commute to campus in minutes. “$0” entries were assumed to be students who lived with parents/family, and were excluded from the data as they do not contribute to data about rent prices. Commute time was capped to 180 minutes (3 hours), as 3 hours is a generous upper limit for reasonable commutes.  
 
 
 
 
 ## Research Question 1
 
-**How have rent prices changed between Semester 2 of last year (2024) and Semester 1 this year (2025)**
+**How have rent prices changed between Semester 2 of last year (2024) and Semester 1 this year (2025) ?**
 
 
 
