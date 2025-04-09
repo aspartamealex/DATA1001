@@ -19,50 +19,23 @@ According to our results, the rental prices in Sydney have increased over time r
 
 ## IDA
 
-**Overview**
+This dataset was sourced from a voluntary survey completed by students who were or currently are enrolled in DATA1X01 at the University of Sydney. 
 
-This data was sourced from a survey containing 25 variables and was completed by 2103 students in DATA1901 and DATA1001 (99% of the cohort) 
+Analysis was focused on three key variables: weekly rent paid in AUD (quantitative, continuous), commute time to campus in minutes (quantitative, continuous), and student cohort—2024S2 or 2025S1 (qualitative, discrete). 
 
-Our research focused on the variables: rent per week in AUD, Length of commute to campus (minutes), Cohort. We classified our variables quantitative continuous, quantitative continuous and qualitative discrete.
+The data only considered DATA1X01 students and neither reflected the whole student body, nor all students in Sydney. It was also self-reported and unverified, which may have made it inaccurate as respondents could have misinterpreted questions or lied. 
+
+It was assumed that people honestly and reasonably reported the amount of rent they paid, and also an estimate of the time it takes to commute to campus. “$0” rent meant that the student did not pay rent, and it was assumed they lived with parents or family. These were excluded from the dataset as they don’t provide useful information about rent prices. Rents above $2000 were also excluded, as they could represent shared leases, data-entry errors, or luxury rentals not representing student populations. Commute times above 3 hours were also not considered, as 3 hours is a generous upper limit for reasonable commutes.
 
 ```{r, warning = FALSE, message = FALSE}
 library(tidyverse)      # for box and linear model
-library(plotly)         # for pie chart
-library(RColorBrewer)   # for recolouring pie chart
 library(ggthemes)       # for ggplot theme
-surveydata = read.csv("data1001_survey_data_2025_S1.csv")
-surveydata = filter(surveydata, consent == "I consent to take part in the study")
-surveydata = surveydata[surveydata$rent <= 2000, ]
-surveydata = surveydata[surveydata$rent != 0, ]
-surveydata = surveydata[surveydata$commute <= 180, ]
+surveydata = read.csv("data1001_survey_data_2025_S1.csv")     
+surveydata = filter(surveydata, consent == "I consent to take part in the study") # remove students who did not consent to take part in the study
+surveydata = surveydata[surveydata$rent <= 2000, ]    # remove data with rent greater than 2000
+surveydata = surveydata[surveydata$rent != 0, ]       # remove data with 0 rent
+surveydata = surveydata[surveydata$commute <= 180, ]  # remove data with commute time greater than 180 minutes
 ```
-
-
-
-**Limitations**
-
-Limitations of this data is that it is only a representation of this cohort and not a population so it will not accurately represent the fluctuating rent prices and commute times. There is a significant difference in cohort sizes for each semester, which can impact our data due to the different sample sizes.
-
-```{r, warning = FALSE, message = FALSE}
-cohort_summary <- surveydata %>%
-  count(cohort)
-
-plot_ly(cohort_summary, 
-        labels = ~cohort, 
-        values = ~n,
-        type = 'pie',
-        textinfo = 'percent',
-        textposition = 'auto',
-        marker = list(colors = brewer.pal(length(unique(surveydata$cohort)), "Oranges"))) %>%
-  layout(title = 'Distribution of Semesters',
-         showlegend = TRUE)
-```
-
-**Assumptions**
-
-It was assumed that people were honest and reasonable in their responses, and responses where students did not consent to take part in the survey were excluded. Students responded with the accurate amount of rent they paid in AUD$ per week, and also a reasonable estimate of the time it takes to commute to campus in minutes.
-
-"$0" rent values were assumed to reflect students living with parents or family and were excluded, as they do not provide useful data about actual rent prices. Entries with rent values above "$2000" were also removed, as they could represent shared leases, data entry errors or luxury rentals not representative of student populations. Similarly, commute times were capped at 180 minutes (3 hours), a generous upper limit for reasonable commutes. 
 
 
 
