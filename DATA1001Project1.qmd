@@ -1,0 +1,131 @@
+---
+title: "DATA1001 Project"
+author: "540539824, 550668899, 440318530, 541006846"
+format: 
+  html:
+    embed-resources: true
+    toc: true
+    code-fold: true
+    theme: sandstone
+    css: style.css  # custom css file
+    
+---
+
+# Recommendation/Insight
+
+According to our results, the rental prices in Sydney have increased over time regardless of where students live. We recommend that the university provide more affordable housing options to make education more accessible and affordable for students. 
+
+# Evidence
+
+## IDA
+
+**Overview**
+
+This data was sourced from a survey containing 25 variables and was completed by 2103 students in DATA1901 and DATA1001 (99% of the cohort) 
+
+Our research focused on the variables: rent per week in AUD, Length of commute to campus (minutes), Cohort. We classified our variables quantitative continuous, quantitative continuous and qualitative discrete.
+
+```{r, warning = FALSE, message = FALSE}
+library(tidyverse)      # for box and linear model
+library(plotly)         # for pie chart
+library(RColorBrewer)   # for recolouring pie chart
+library(ggthemes)       # for ggplot theme
+surveydata = read.csv("data1001_survey_data_2025_S1.csv")
+surveydata = filter(surveydata, consent == "I consent to take part in the study")
+surveydata = surveydata[surveydata$rent <= 2000, ]
+surveydata = surveydata[surveydata$rent != 0, ]
+surveydata = surveydata[surveydata$commute <= 180, ]
+```
+
+
+
+**Limitations**
+
+Limitations of this data is that it is only a representation of this cohort and not a population so it will not accurately represent the fluctuating rent prices and commute times. There is a significant difference in cohort sizes for each semester, which can impact our data due to the different sample sizes.
+
+```{r, warning = FALSE, message = FALSE}
+cohort_summary <- surveydata %>%
+  count(cohort)
+
+plot_ly(cohort_summary, 
+        labels = ~cohort, 
+        values = ~n,
+        type = 'pie',
+        textinfo = 'percent',
+        textposition = 'auto',
+        marker = list(colors = brewer.pal(length(unique(surveydata$cohort)), "Oranges"))) %>%
+  layout(title = 'Distribution of Semesters',
+         showlegend = TRUE)
+```
+
+**Assumptions**
+
+We assumed that people were honest and reasonable in their responses, everyone responded with the accurate amount of rent they paid in AUD$ per week and also an appropriate approximation of the length of their commute to campus. We cleaned the data by removing responses that answered $0 and those above $2000, as well as responses with commute times over 180 minutes. 
+
+
+
+
+## Research Question 1
+
+**How have rent prices changed between Semester 2 of last year (2024) and Semester 1 this year (2025)**
+
+
+
+
+
+```{r}
+ggplot(surveydata, aes(x = rent, y = cohort)) +
+  geom_boxplot() +
+  labs(x = "Rent",
+       y = "Semester") +
+  theme_solarized() +
+  scale_fill_solarized()
+```
+
+
+
+## Research Question 2
+
+:::: {.panel-tabset}
+### Scatter Plot
+```{r, warning = FALSE, message = FALSE}
+ggplot(surveydata, aes(x = commute, y = rent)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Commute",
+       y = "Rent") +
+  theme_solarized() +
+  scale_fill_solarized()
+```
+
+### Residual Plot
+```{r, warning = FALSE, message = FALSE}
+model = lm(rent ~ commute, data = surveydata)
+
+# Create residual plot
+# Create residual plot
+ggplot(model, aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  geom_hline(yintercept = 0, linetype = "dashed", colour = "red") +
+  labs(x = "Fitted Value",
+        y = "Residual") +
+  theme_solarized() +
+  scale_fill_solarized()
+```
+::::
+
+
+
+
+
+
+## Articles
+
+[1]Welch, I. (2025, January 28). House prices to rise by 3.3%, units by 4.6% in 2025. KPMG. https://kpmg.com/au/en/home/media/press-releases/2025/01/house-and-unit-prices-to-rise-in-2025.html
+
+# Acknowledgements
+
+The Acknowledgment section includes a list of group meetings (date and time and attendance), the contribution of each group member, and all resources used (eg url of stack overflow, url of Ed post, date and details of drop-in session with tutor, record of ChatGPT session with prompt)
+ 
+
+

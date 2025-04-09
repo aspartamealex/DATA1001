@@ -1,0 +1,17 @@
+.title {
+    font-size: 3em;
+    color: #3E606F;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f5f0;
+    border-bottom: 4px solid #d6cec3;
+    margin-bottom: 30px;
+}
+h1 {
+    color: #3E606F;
+    border-bottom: 2px solid #d6cec3;
+    padding-bottom: 10px;
+}
+h2 {
+    color: #5c8d76;
+}
