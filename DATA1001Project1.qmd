@@ -101,7 +101,7 @@ Average rent in downtown Sydney ranges between \$600–\$1,200 per week, while r
 
 Our RQ1 findings reflect KPMG’s projection that unit rent prices will rise by 4.6% in 2025, driven by ongoing affordability pressures and increased demand for lower-cost housing. RQ2 supports Herath and Jayasekare’s conclusion that travel time alone cannot explain rent patterns, as other factors like accessibility and amenities also matter.
 
-#Professional standard of report
+# Professional standard of report
 
 We upheld integrity by accurately reporting our findings, avoiding data manipulation, and  acknowledging limitations in our analysis. We protected interests of subjects by excluding non-consenting responses.
 
@@ -141,7 +141,7 @@ AI Usage Statement
 We did not use AI for this project, and our ideas were original.
 
  
-#References 
+# References 
 
 Herath, S., & Jayasekare, T. (2021). City proximity, travel modes and house prices: Evidence from Sydney. Journal of Housing and the Built Environment, 36(1), 211–229. https://doi.org/10.1007/s10901-020-09805-w
 
