@@ -107,7 +107,39 @@ We upheld integrity by accurately reporting our findings, avoiding data manipula
 
 # Acknowledgements
 
-The Acknowledgment section includes a list of group meetings (date and time and attendance), the contribution of each group member, and all resources used (eg url of stack overflow, url of Ed post, date and details of drop-in session with tutor, record of ChatGPT session with prompt)
+Group Meetings & Attendance
+
+Wednesday 26/3 (in class): Yousuf, Vyom, Carleen — brainstormed research questions
+
+Wednesday 2/4 (in class): Carleen, Diya, Alex, Vyom — selected key questions, including RQ2
+
+Thursday 3/4 (5:00–6:30pm call): Carleen, Alex, Yousuf — Alex plotted RQ1, Carleen wrote IDA and Q1 analysis, Yousuf sourced articles
+
+Friday 4/4 (1:00–2:00pm call): Carleen, Alex, Diya — Alex found reference article for Q1, Carleen refined analysis, Diya and Alex started Q2, Diya wrote insight
+
+Wednesday 9/4 (in class): Carleen, Alex, Yousuf, Vyom — Carleen completed Q1 & Q2 with references, Vyom worked on IDA, Alex updated QMD
+
+Friday 11/4 (1:00pm call): Vyom, Alex, Yousuf — shortened final sections, reviewed marking criteria, finalised acknowledgements
+
+
+Group Member Contributions
+Carleen: IDA write-up, Q1 and Q2 analysis, integrating references
+
+Alex: Plots for Q1 and Q2, statistical summaries (mean, median, IQR), QMD formatting
+
+Diya: Wrote insight and recommendation for Q2, assisted with Q2 analysis
+
+Vyom: IDA contribution, brainstormed questions, reviewed final structure,completed  professional standard of report, completed article section, final edits to Q1 and Q2.
+
+Yousuf: Rewrote Q2 analysis, sourced relevant articles, assisted with editing and final criteria check
+
+
+Resources used 
+Shared github repository: https://github.com/aspartamealex/DATA1001
+
+AI Usage Statement
+We did not use AI for this project, and our ideas were original.
+
  
 #References 
 
