@@ -62,6 +62,8 @@ However, data limitations such as the significantly different sample sizes (597 
 
 ## Research Question 2
 
+**Is there a linear correlation between the rent a student pays and the time they commute for?**
+
 :::: {.panel-tabset}
 ### Scatter Plot
 ```{r, warning = FALSE, message = FALSE}
@@ -95,15 +97,13 @@ There is a very weak negative correlation between commute time and rental prices
 Average rent in downtown Sydney ranges between \$600–\$1,200 per week, while rents in Western and South-Western Sydney tend to average around \$400–\$550 per week (Soho, 2025). It is logical to expect that students living farther from campus, and thus commuting longer, would pay lower rent. However, our findings did not reflect a strong or consistent pattern. The relationship between rent and commute time is likely too complex to explain with a single factor, as things like transport access, availability of affordable housing, and personal preferences also influence rental prices (Herath & Jayasekare, 2021).
 
 
+# Articles
+
+Our RQ1 findings reflect KPMG’s projection that unit rent prices will rise by 4.6% in 2025, driven by ongoing affordability pressures and increased demand for lower-cost housing. RQ2 supports Herath and Jayasekare’s conclusion that travel time alone cannot explain rent patterns, as other factors like accessibility and amenities also matter.
 
 #Professional standard of report
 
 We upheld integrity by accurately reporting our findings, avoiding data manipulation, and  acknowledging limitations in our analysis. We protected interests of subjects by excluding non-consenting responses.
-
-
-# Articles
-
-Our RQ1 findings reflect KPMG’s projection that unit rent prices will rise by 4.6% in 2025, driven by ongoing affordability pressures and increased demand for lower-cost housing. RQ2 supports Herath and Jayasekare’s conclusion that travel time alone cannot explain rent patterns, as other factors like accessibility and amenities also matter.
 
 # Acknowledgements
 
@@ -111,8 +111,10 @@ The Acknowledgment section includes a list of group meetings (date and time and 
  
 #References 
 
-Welch, I. (2025, January 28). House prices to rise by 3.3%, units by 4.6% in 2025. KPMG Australia. https://kpmg.com/au/en/home/media/press-releases/2025/01/house-and-unit-prices-to-rise-in-2025.html
+Herath, S., & Jayasekare, T. (2021). City proximity, travel modes and house prices: Evidence from Sydney. Journal of Housing and the Built Environment, 36(1), 211–229. https://doi.org/10.1007/s10901-020-09805-w
 
-Herath, S., & Jayasekare, A. S. (2021). City proximity, travel modes and house prices: The three cities in Sydney. Journal of Housing and the Built Environment, 36(2), 407–431. https://doi.org/10.1007/s10901-020-09805-w
+KPMG. (2025, January). House and unit prices to rise in 2025. https://kpmg.com/au/en/home/media/press-releases/2025/01/house-and-unit-prices-to-rise-in-2025.html
+
+Soho. (2025). Average rent in Sydney. https://soho.com.au/articles/average-rent-in-sydney
 
 
