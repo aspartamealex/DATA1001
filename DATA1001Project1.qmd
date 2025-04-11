@@ -46,9 +46,6 @@ surveydata = surveydata[surveydata$commute <= 180, ]  # remove data with commute
 **How have rent prices changed between Semester 2 of last year (2024) and Semester 1 this year (2025) ?**
 
 
-
-
-
 ```{r}
 ggplot(surveydata, aes(x = rent, y = cohort)) +
   geom_boxplot() +
@@ -58,6 +55,9 @@ ggplot(surveydata, aes(x = rent, y = cohort)) +
   scale_fill_solarized()
 ```
 
+Rent prices for 2025S1 students showed a rise compared to 2024S2, this was reflected by an increased median (550 vs. 500), mean (557.46 vs. 526.83), and IQR (366 vs. 328). The higher median suggests rent inflation, while the larger IQR indicates a broader range of prices, this could suggest that there are possible external factors like economic shifts and housing demand changes that affected rent prices. KPMG's 6-monthly property report supports this as they explore how unit “rent prices will gain by 4.6% in 2025 as units represent a more realistic housing route, given the ongoing affordability crisis” (inflation)
+
+However, data limitations such as the significantly different sample sizes (597 in 2024S2 vs. 1506 in 2025S1) and the short timeframe of two semesters, prevents the analysis of long-term trends. Additionally, responses reporting $0 were excluded, assuming these students live with their parents, they do not align with our research question. 
 
 
 ## Research Question 2
