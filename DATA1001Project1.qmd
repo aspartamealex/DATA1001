@@ -125,7 +125,7 @@ We upheld integrity by accurately reporting our findings, avoiding data manipula
 
 **Group Member Contributions**
 
-- Carleen: IDA write-up, Q1 and Q2 analysis, integrating references
+- Carleen: IDA write-up, Q1 and Q2 analysis, integrating references, presentation slides
 
 - Alex: Plots for Q1 and Q2, statistical summaries (mean, median, IQR), QMD formatting
 
