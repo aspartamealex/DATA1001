@@ -14,23 +14,24 @@ format:
 
 # Recommendation/Insight
 
-According to our results, the rental prices in Sydney have increased over time regardless of where students live. We recommend that the university provide more affordable housing options to make education more accessible and affordable for students. 
+Student's rent prices rose slightly between 2024S2 and 2025S1, with higher averages and wider variation. However, commute time showed only a weak link to rent. This suggests students can’t rely on moving farther away to save money—other factors like transport access and area preferences influence housing costs.
 
 # Evidence
 
 ## IDA
 
-This dataset was sourced from a voluntary survey completed by students who were or currently are enrolled in DATA1X01 at the University of Sydney. 
+This dataset was collected from a voluntary, self-reported survey by students, previously or currently enrolled in DATA1X01 at the University of Sydney. 
 
-Analysis was focused on three key variables: weekly rent paid in AUD (quantitative, continuous), commute time to campus in minutes (quantitative, continuous), and student cohort—2024S2 or 2025S1 (qualitative, discrete). 
+Our analysis focused on three variables: weekly rent paid (AUD), commute time to campus (minutes), and student cohort (2024S2 or 2025S1). The first two are quantitative and continuous, while cohort is a categorical variable with two levels. 
 
-The data only considered DATA1X01 students and neither reflected the whole student body, nor all students in Sydney. It was also self-reported and unverified, which may have made it inaccurate as respondents could have misinterpreted questions or lied. 
+The dataset only includes DATA1X01 students and does not represent the University of Sydney student body or the general student population in Sydney. As the data was self-reported and unverified, it may be inaccurate due to misinterpretation or estimation error.
 
-It was assumed that people honestly and reasonably reported the amount of rent they paid, and also an estimate of the time it takes to commute to campus. “$0” rent meant that the student did not pay rent, and it was assumed they lived with parents or family. These were excluded from the dataset as they don’t provide useful information about rent prices. Rents above $2000 were also excluded, as they could represent shared leases, data-entry errors, or luxury rentals not representing student populations. Commute times above 3 hours were also not considered, as 3 hours is a generous upper limit for reasonable commutes.
+We assumed that respondents provided reasonable estimates of their weekly rent and commute times. A rent value of \$0 was interpreted as students living with family or in rent-free arrangements, and these were excluded as they do not reflect market rent. Values above \$2000 per week were also excluded, as they may represent shared leases, data-entry errors, or luxury rentals outside the typical student range. Commute times over 180 minutes were excluded as well, with 3 hours set as a generous upper limit for daily commute.
 
 ```{r, warning = FALSE, message = FALSE}
 library(tidyverse)      # for box and linear model
 library(ggthemes)       # for ggplot theme
+
 surveydata = read.csv("data1001_survey_data_2025_S1.csv")     
 surveydata = filter(surveydata, consent == "I consent to take part in the study") # remove students who did not consent to take part in the study
 surveydata = surveydata[surveydata$rent <= 2000, ]    # remove data with rent greater than 2000
@@ -54,9 +55,9 @@ ggplot(surveydata, aes(x = rent, y = cohort)) +
   scale_fill_solarized()
 ```
 
-Rent prices for 2025S1 students showed a rise compared to 2024S2, this was reflected by an increased median (550 vs. 500), mean (557.46 vs. 526.83), and IQR (366 vs. 328). The higher median suggests rent inflation, while the larger IQR indicates a broader range of prices, this could suggest that there are possible external factors like economic shifts and housing demand changes that affected rent prices. KPMG's 6-monthly property report supports this as they explore how unit “rent prices will gain by 4.6% in 2025 as units represent a more realistic housing route, given the ongoing affordability crisis” (inflation)
+Rent prices for 2025S1 students increased compared to 2024S2. In particular, the median rent rose from \$500 to \$550, while the mean increased from \$526.83 to \$557.46. The interquartile range (IQR) also increased from \$328 to \$366. Together, these changes suggest inflation in rent prices and greater variation in the amount students are paying. This may be due to affordability pressures and increased demand for more realistic housing options, such as rental units (KPMG, 2025).
 
-However, data limitations such as the significantly different sample sizes (597 in 2024S2 vs. 1506 in 2025S1) and the short timeframe of two semesters, prevents the analysis of long-term trends. Additionally, responses reporting $0 were excluded, assuming these students live with their parents, they do not align with our research question. 
+However, data limitations such as the significantly different sample sizes (597 in 2024S2 vs. 1506 in 2025S1) and the short time frame of two semesters prevent the analysis of long-term trends. Additionally, responses reporting \$0 were excluded, as we assumed these students live with their parents or in other rent-free arrangements. These cases do not align with our research question.
 
 
 ## Research Question 2
@@ -89,18 +90,29 @@ ggplot(model, aes(x = .fitted, y = .resid)) +
 ```
 ::::
 
+There is a very weak negative correlation between commute time and rental prices among students in the DATA1001 unit. This is evident from our linear model graph. The scatter plot lacks a clear linear pattern, and the correlation coefficient of -0.17 suggests the association between the variables is negligible. The residual plot also shows clustered points and a lack of homoscedasticity, indicating that a linear model is not appropriate for this data.
+
+Average rent in downtown Sydney ranges between \$600–\$1,200 per week, while rents in Western and South-Western Sydney tend to average around \$400–\$550 per week (Soho, 2025). It is logical to expect that students living farther from campus, and thus commuting longer, would pay lower rent. However, our findings did not reflect a strong or consistent pattern. The relationship between rent and commute time is likely too complex to explain with a single factor, as things like transport access, availability of affordable housing, and personal preferences also influence rental prices (Herath & Jayasekare, 2021).
 
 
 
+#Professional standard of report
+
+We upheld integrity by accurately reporting our findings, avoiding data manipulation, and  acknowledging limitations in our analysis. We protected interests of subjects by excluding non-consenting responses.
 
 
-## Articles
+# Articles
 
-[1]Welch, I. (2025, January 28). House prices to rise by 3.3%, units by 4.6% in 2025. KPMG. https://kpmg.com/au/en/home/media/press-releases/2025/01/house-and-unit-prices-to-rise-in-2025.html
+Our RQ1 findings reflect KPMG’s projection that unit rent prices will rise by 4.6% in 2025, driven by ongoing affordability pressures and increased demand for lower-cost housing. RQ2 supports Herath and Jayasekare’s conclusion that travel time alone cannot explain rent patterns, as other factors like accessibility and amenities also matter.
 
 # Acknowledgements
 
 The Acknowledgment section includes a list of group meetings (date and time and attendance), the contribution of each group member, and all resources used (eg url of stack overflow, url of Ed post, date and details of drop-in session with tutor, record of ChatGPT session with prompt)
  
+#References 
+
+Welch, I. (2025, January 28). House prices to rise by 3.3%, units by 4.6% in 2025. KPMG Australia. https://kpmg.com/au/en/home/media/press-releases/2025/01/house-and-unit-prices-to-rise-in-2025.html
+
+Herath, S., & Jayasekare, A. S. (2021). City proximity, travel modes and house prices: The three cities in Sydney. Journal of Housing and the Built Environment, 36(2), 407–431. https://doi.org/10.1007/s10901-020-09805-w
 
 
