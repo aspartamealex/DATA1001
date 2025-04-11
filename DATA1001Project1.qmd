@@ -45,7 +45,6 @@ surveydata = surveydata[surveydata$commute <= 180, ]  # remove data with commute
 
 **How have rent prices changed between Semester 2 of last year (2024) and Semester 1 this year (2025) ?**
 
-
 ```{r}
 ggplot(surveydata, aes(x = rent, y = cohort)) +
   geom_boxplot() +
