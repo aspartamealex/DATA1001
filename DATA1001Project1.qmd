@@ -107,7 +107,7 @@ We upheld integrity by accurately reporting our findings, avoiding data manipula
 
 # Acknowledgements
 
-##Group Meetings & Attendance
+**Group Meetings & Attendance**
 
 - Wednesday 26/3 (in class): Yousuf, Vyom, Carleen — brainstormed research questions
 
@@ -122,7 +122,9 @@ We upheld integrity by accurately reporting our findings, avoiding data manipula
 - Friday 11/4 (1:00pm call): Vyom, Alex, Yousuf — shortened final sections, reviewed marking criteria, finalised acknowledgements
 
 
-##Group Member Contributions
+
+**Group Member Contributions**
+
 - Carleen: IDA write-up, Q1 and Q2 analysis, integrating references
 
 - Alex: Plots for Q1 and Q2, statistical summaries (mean, median, IQR), QMD formatting
@@ -134,13 +136,18 @@ We upheld integrity by accurately reporting our findings, avoiding data manipula
 - Yousuf: Rewrote Q2 analysis, sourced relevant articles, assisted with editing and final criteria check
 
 
-##Resources used 
+
+**Resources used** 
+
 - Shared github repository: https://github.com/aspartamealex/DATA1001
 - Shared google doc was used to collaborate on making the report.
 
-##AI Usage Statement
+
+**AI Usage Statement**
+
 We did not use AI for this project, and our ideas were original.
 
+ 
  
 # References 
 
